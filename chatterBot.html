@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gemini Chatbot 💬</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background-color: #f4eaff;
+      font-family: 'Verdana', sans-serif;
+    }
+
+    .container {
+      background: #fff;
+      border: 2px solid #d8b4f8;
+      box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .chatbox {
+      background: #f3e8ff;
+      border: 2px solid #d8b4f8;
+    }
+
+    .input-field {
+      background: #fdf7ff;
+    }
+
+    .send-btn {
+      background-color: #d8b4f8;
+      transition: transform 0.2s ease, background-color 0.3s ease;
+    }
+
+    .send-btn:hover {
+      transform: scale(1.05);
+      background-color: #b280d1;
+    }
+
+    .emoji {
+      font-size: 1.2rem;
+    }
+  </style>
+</head>
+<body class="flex items-center justify-center min-h-screen">
+
+  <div class="container rounded-3xl p-6 h-[90vh] w-full max-w-2xl flex flex-col justify-between">
+    <!-- Title with Emoji -->
+    <h1 class="text-4xl font-extrabold text-purple-600 text-center mb-4 tracking-wide flex items-center justify-center">
+     Gemini Chatbot 💬
+    </h1>
+
+    <!-- Chatbox Section -->
+    <div class="chatbox rounded-2xl p-4 overflow-y-auto mb-4 flex-1">
+      <div id="chat-output" class="chat-output space-y-3 text-gray-700">
+        <!-- Chat messages will appear here -->
+      </div>
+    </div>
+
+    <!-- Input Box Section -->
+    <div class="flex items-center bg-white rounded-2xl shadow-md p-2">
+      <input 
+        type="text" 
+        id="userInput" 
+        class="input-field flex-1 px-4 py-3 rounded-l-2xl border border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-400" 
+        placeholder="Type your message..." 
+      >
+      <button 
+        id="sendMsg" 
+        class="send-btn px-6 py-3 text-white rounded-r-2xl font-semibold flex items-center justify-center"
+      >
+        🚀 Send
+      </button>
+    </div>
+  </div>
+
+  <script type="module" src="api.js" defer></script>
+</body>
+</html>
